@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/news.css') }}">
+    <title>Космос</title>
+    <script>
+        let text = "{{ ctg }}"
+
+        function ctn(par, txt) {
+            let v1 = document.getElementById(par);
+            v1.innerText = txt;
+        }
+
+        function ctnout(par) {
+            let v1 = document.getElementById(par);
+            v1.innerText = text;
+        }
+
+        function ctndown(par, txt) {
+            text = txt;
+            ctnout(par);
+        }
+
+        function sub(inpt) {
+            document.getElementsByName('ntype')[inpt].checked = true;
+            document.getElementById('pform').submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="btns">
+        <a href="/photos" class="btn">фотографии</a>
+        <a href="/" class="btn">главная</a>
+        <a href="/feedback" class="btn">обратная связь</a>
+    </div>
+    <p id="top"></p>
+    <form class="locate" method="get" action="/news" id="pform">
+        <div class="search">
+            <input class="txt" name="title" type="text" placeholder="поиск по новостям">
+            <label class="sub">
+                <input type="submit" value="">
+                <img src="{{ url_for('static', filename='pictures/search.svg') }}" alt="поиск">
+            </label>
+        </div>
+        <div class="choose">
+            <p id="ctg">{{ ctg }}</p>
+            <label class="rdo_lb" onmouseover="ctn('ctg', 'все категории')" onmouseleave="ctnout('ctg')" onmousedown="ctndown('ctg', 'все категории')" onmouseup="sub(0)">
+                <input class="rdo" type="radio" name="ntype" value="all" {{ checks[0] }}>
+                <img src="{{ url_for('static', filename='pictures/all.svg') }}" alt="все">
+            </label>
+            <label class="rdo_lb" onmouseover="ctn('ctg', 'земные')" onmouseleave="ctnout('ctg')" onmousedown="ctndown('ctg', 'земные')"  onmouseup="sub(1)">
+                <input class="rdo" type="radio" name="ntype" value="earth" {{ checks[1] }}>
+                <img src="{{ url_for('static', filename='pictures/earth.svg') }}" alt="земля">
+            </label>
+            <label class="rdo_lb" onmouseover="ctn('ctg', 'ближний космос')" onmouseleave="ctnout('ctg')" onmousedown="ctndown('ctg', 'ближний космос')"  onmouseup="sub(2)">
+                <input class="rdo" type="radio" name="ntype" value="nearspace" {{ checks[2] }}>
+                <img src="{{ url_for('static', filename='pictures/nearspace.svg') }}" alt="ближ космос">
+            </label>
+            <label class="rdo_lb" onmouseover="ctn('ctg', 'космические миссии')" onmouseleave="ctnout('ctg')" onmousedown="ctndown('ctg', 'космические миссии')"  onmouseup="sub(3)">
+                <input class="rdo" type="radio" name="ntype" value="space_missions" {{ checks[3] }}>
+                <img src="{{ url_for('static', filename='pictures/space_missions.svg') }}" alt="косм миссии">
+            </label>
+            <label class="rdo_lb" onmouseover="ctn('ctg', 'дальний космос')" onmouseleave="ctnout('ctg')" onmousedown="ctndown('ctg', 'дальний космос')"  onmouseup="sub(4)">
+                <input class="rdo" type="radio" name="ntype" value="farspace" {{ checks[4] }}>
+                <img src="{{ url_for('static', filename='pictures/farspace.svg') }}" alt="даль космос">
+            </label>
+        </div>
+    </form>
+    <h1>{{ poisk }}</h1>
+    <div class="news">
+        {% for i in ns %}
+        <a href="{{ '/news/'+nl[i['index']] }}">
+            <div class="imgbox">
+                <img src="{{ url_for('static', filename=i['image']) }}" alt="картинка новости">
+            </div>
+            <div class="textbox">
+                <h4>{{ nl[i['index']] }}</h4>
+                <p>{{ nt[i['index']] }}</p>
+                <p class="date">{{ i["date"] }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</body>
+</html>

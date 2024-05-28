@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/photos.css') }}">
+    <title>Космос</title>
+    <script>
+        let text = "{{ ctg }}"
+
+        function ctn(par, txt) {
+            let v1 = document.getElementById(par);
+            v1.innerText = txt;
+        }
+
+        function ctnout(par) {
+            let v1 = document.getElementById(par);
+            v1.innerText = text;
+        }
+
+        function ctndown(par, txt) {
+            text = txt;
+            ctnout(par);
+        }
+
+        function sub(inpt) {
+            document.getElementsByName('ntype')[inpt].checked = true;
+            document.getElementById('pform').submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="btns">
+        <a href="/" class="btn">главная</a>
+        <a href="/news" class="btn">новости</a>
+        <a href="/feedback" class="btn">обратная связь</a>
+    </div>
+    <p id="top"></p>
+    <form class="locate" method="get" id="pform">
+        <div class="search">
+            <input class="txt" name="title" type="text" placeholder="поиск по фотографиям">
+            <label class="sub">
+                <input type="submit" value="">
+                <img src="{{ url_for('static', filename='pictures/search.svg') }}" alt="поиск">
+            </label>
+        </div>
+        <div class="choose">
+            <p id="ctg">{{ ctg }}</p>
+            <label class="rdo_lb" onmouseover="ctn('ctg', 'все категории')" onmouseleave="ctnout('ctg')" onmousedown="ctndown('ctg', 'все категории')" onmouseup="sub(0)">
+                <input class="rdo" type="radio" name="ntype" value="all" {{ checks[0] }}>
+                <img src="{{ url_for('static', filename='pictures/all.svg') }}" alt="все">
+            </label>
+            <label class="rdo_lb" onmouseover="ctn('ctg', 'космическое пространство')" onmouseleave="ctnout('ctg')" onmousedown="ctndown('ctg', 'космическое пространство')" onmouseup="sub(1)">
+                <input class="rdo" type="radio" name="ntype" value="space" {{ checks[1] }}>
+                <img src="{{ url_for('static', filename='pictures/nearspace.svg') }}" alt="космос">
+            </label>
+            <label class="rdo_lb" onmouseover="ctn('ctg', 'солнечная система')" onmouseleave="ctnout('ctg')" onmousedown="ctndown('ctg', 'солнечная система')" onmouseup="sub(2)">
+                <input class="rdo" type="radio" name="ntype" value="solar" {{ checks[2] }}>
+                <img src="{{ url_for('static', filename='pictures/solar.svg') }}" alt="солнечная">
+            </label>
+            <label class="rdo_lb" onmouseover="ctn('ctg', 'дальний космос')" onmouseleave="ctnout('ctg')" onmousedown="ctndown('ctg', 'дальний космос')" onmouseup="sub(3)">
+                <input class="rdo" type="radio" name="ntype" value="farspace" {{ checks[4] }}>
+                <img src="{{ url_for('static', filename='pictures/farspace.svg') }}" alt="даль космос">
+            </label>
+        </div>
+    </form>
+    <h1>{{ poisk }}</h1>
+    <div class="photos">
+        {% for i in ns %}
+        <a href="{{ '/photos/'+nl[i['index']] }}">
+            <div class="photo">
+                <img src="{{ url_for('static', filename='photos/'+nl[i['index']]+'/'+i['image']) }}" alt="картинка">
+                <p>{{ i['date'] }}</p>
+            </div>
+            <div class="text">
+                <h4>{{ nl[i['index']] }}</h4>
+                <p>{{ i['text'] }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</body>
+</html>

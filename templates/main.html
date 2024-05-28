@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css') }}">
+    <title>Космос</title>
+</head>
+<body>
+    <div class="btns">
+        <a href="/photos" class="btn">фотографии</a>
+        <a href="/news" class="btn">новости</a>
+        <a href="/feedback" class="btn">обратная связь</a>
+    </div>
+    <p id="top"></p>
+    <a class="bigphoto" href="{{ bp[0][3] }}">
+        <img src="{{ url_for('static', filename='pictures/' + bp[0][2]) }}" alt="картинка">
+        <div class="text">
+            <h2>{{ bp[0][0] }}</h2>
+            <p>{{ bp[0][1] }}</p>
+        </div>
+    </a>
+    <h1>Последние новости</h1>
+    <div class="news">
+        <a href="{{ '/news/'+nl[ns[0]] }}"><h4>{{ np[ns[0]] }}</h4><p>{{ nt[ns[0]] }}</p></a>
+        <a href="{{ '/news/'+nl[ns[1]] }}"><h4>{{ np[ns[1]] }}</h4><p>{{ nt[ns[1]] }}</p></a>
+        <a href="{{ '/news/'+nl[ns[2]] }}"><h4>{{ np[ns[2]] }}</h4><p>{{ nt[ns[2]] }}</p></a>
+        <a href="{{ '/news/'+nl[ns[3]] }}"><h4>{{ np[ns[3]] }}</h4><p>{{ nt[ns[3]] }}</p></a>
+        <a href="{{ '/news/'+nl[ns[4]] }}"><h4>{{ np[ns[4]] }}</h4><p>{{ nt[ns[4]] }}</p></a>
+        <a href="{{ '/news/'+nl[ns[5]] }}"><h4>{{ np[ns[5]] }}</h4><p>{{ nt[ns[5]] }}</p></a>
+    </div>
+    <a class="bigphoto" href="{{ bp[1][3] }}">
+        <img src="{{ url_for('static', filename='pictures/' + bp[1][2]) }}" alt="картинка">
+        <div class="text">
+            <h2>{{ bp[1][0] }}</h2>
+            <p>{{ bp[1][1] }}</p>
+        </div>
+    </a>
+    <h1>Красоты космоса</h1>
+    <div class="photos">
+        {% for i in ph %}
+        <div class="pmainlink">
+            <a href="{{ '/photos/'+i['index'] }}" class="photo">
+                <img src="{{ url_for('static', filename='photos/'+i['index']+'/'+i['image']) }}" alt="картинка">
+            </a>
+            <div class="ptext">
+                <a href="{{ '/photos/'+i['index'] }}" class="tlink">
+                    <h4>{{ i['index'] }}</h4>
+                    <p>{{ i['text'] }}</p>
+                </a>
+                <a href="/photos?title=&ntype={{ i['ntype'] }}" class="clink">смотрите другие фото в категории
+                {% if i['ntype'] == 'solar' %}
+                солнечная система
+                {% elif i['ntype'] == 'space' %}
+                космическое пространство
+                {% elif i['ntype'] == 'farspace' %}
+                далёкий космос
+                {% endif %}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <footer>
+        Сделано студентом Голобородько Иваном, как проект для допов
+    </footer>
+</body>
+</html>

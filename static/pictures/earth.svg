@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="earth.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="19.445436"
+     inkscape:cy="155.20994"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1"
+       style="fill:#1499ff;fill-opacity:1;stroke:none;stroke-width:2.2384;stroke-opacity:1"
+       d="M 23,50.075689 V 88.162207 A 31.135699,14.497745 0 0 0 49.482855,95.075689 31.135699,14.497745 0 0 0 77,87.305368 V 50.116309 A 31.135699,14.497745 0 0 1 50.028832,57.39967 31.135699,14.497745 0 0 1 23,50.075689 Z" />
+    <path
+       id="path2"
+       style="fill:#1499ff;fill-opacity:1;stroke:none;stroke-width:2.67319;stroke-opacity:1"
+       d="M 49.987675,23.876062 A 27.025412,24.313588 0 0 0 23,47.710389 a 27.025412,24.313588 0 0 0 0,4.64e-4 31.640149,15.96612 0 0 0 4.65e-4,0 31.640149,15.96612 0 0 0 26.979303,7.665209 A 31.640149,15.96612 0 0 0 76.999535,47.710853 31.640149,15.96612 0 0 0 77,47.710389 27.025412,24.313588 0 0 0 49.987675,23.876062 Z" />
+    <path
+       id="rect3"
+       style="fill:#1499ff;fill-opacity:1;stroke:none;stroke-width:2.0765;stroke-opacity:1"
+       d="m 17.935057,15.58598 4.931016,6.89874 1.705025,-1.218701 10.548021,14.75722 6.117158,-4.372363 -10.548022,-14.757219 1.705024,-1.218702 -4.931015,-6.8987398 z" />
+  </g>
+</svg>

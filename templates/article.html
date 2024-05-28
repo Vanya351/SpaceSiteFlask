@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/article.css') }}">
+    <title>Космос</title>
+</head>
+<body>
+    <div class="btns">
+        <a href="/" class="btn">главная</a>
+        <a href="/photos" class="btn">фотографии</a>
+        <a href="/news" class="btn">новости</a>
+        <a href="/feedback" class="btn">обратная связь</a>
+    </div>
+    <p id="top"></p>
+    <div id="content">
+    {%  if notfound == False %}
+        {% for el in info %}
+            {% if el[:2] == "t>" %}
+                <h1>{{ el[2:] }}</h1>
+            {% elif el[:2] == "s>" %}
+                <h2>{{ el[2:] }}</h2>
+            {% elif el[:2] == "i>" %}
+                <div class="cntr">
+                    <img src="{{ url_for('static', filename='news/'+nl+'/'+el[2:]) }}" alt="картинка">
+                </div>
+            {% elif el[:2] == "p>" %}
+                <div class="cntr">
+                    <p class="undimg">{{ el[2:] }}</p>
+                </div>
+            {% else %}
+                <p class="default">{{ el }}</p>
+            {% endif %}
+        {% endfor %}
+    {%  else %}
+        <h1>Это несуществующая статья</h1>
+    {% endif %}
+    </div>
+</html>

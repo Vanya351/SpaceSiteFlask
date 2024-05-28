@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/feedback.css') }}">
+    <title>Космос</title>
+</head>
+<body>
+    <div class="btns">
+        <a href="/photos" class="btn">фотографии</a>
+        <a href="/news" class="btn">новости</a>
+        <a href="/" class="btn">главная</a>
+    </div>
+    <p id="top"></p>
+    <div class="content">
+        <h2>Напишите нам</h2>
+        <br>
+        <form method="post">
+            <p>Почему обратились?</p>
+            <select name="option">
+                <option selected>Предложение по развитию</option>
+                <option>Нашёл ошибку</option>
+                <option>Хочу стать автором</option>
+                <option>Прочее</option>
+            </select>
+            <textarea placeholder="текст сообщения" name="text"></textarea>
+            <input type="submit">
+        </form>
+    </div>
+</html>
