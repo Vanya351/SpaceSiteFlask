@@ -53,7 +53,7 @@ h2 {
     height: auto;
     img {
         width: 500px;
-        max-width: 500px;
+        max-width: 100%;
     }
 }
 
@@ -66,4 +66,10 @@ h2 {
 
 .default {
     font-size: 14pt;
+}
+
+@media screen and (max-width: 990px) {
+    .btn:link, .btn:visited, .btn:active {
+        font-size: 12pt;
+    }
 }

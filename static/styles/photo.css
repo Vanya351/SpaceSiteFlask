@@ -41,13 +41,6 @@ body {
     height: 80vh;
 }
 
-@media screen and (max-width: 990px) {
-  #content {
-      flex-wrap: wrap;
-      justify-content: center;
-  }
-}
-
 img {
     height: 100%;
     margin-right: 10px;
@@ -60,4 +53,19 @@ img {
 .data {
     color: grey;
     font-size: 14pt;
+}
+
+@media screen and (max-width: 990px) {
+    .btn:link, .btn:visited, .btn:active {
+        font-size: 12pt;
+    }
+
+    #content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    img {
+        width: 90%;
+    }
 }

@@ -193,14 +193,6 @@ footer {
 }
 
 @media screen and (max-width: 990px) {
-    #top {
-        height: 0;
-    }
-
-    .btns {
-        height: 30px;
-    }
-
     .btn:link, .btn:visited, .btn:active {
         font-size: 12pt;
     }

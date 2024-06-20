@@ -71,3 +71,9 @@ input:hover {
 p {
     font-size: 14pt;
 }
+
+@media screen and (max-width: 990px) {
+    .btn:link, .btn:visited, .btn:active {
+        font-size: 12pt;
+    }
+}

@@ -193,3 +193,13 @@ h1 {
 .date {
     color: grey;
 }
+
+@media screen and (max-width: 990px) {
+    .btn:link, .btn:visited, .btn:active {
+        font-size: 12pt;
+    }
+
+    .mobile_hide {
+        display: none;
+    }
+}
