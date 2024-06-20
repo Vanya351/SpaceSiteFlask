@@ -61,6 +61,7 @@ body {
         margin-top: 3%;
         margin-left: 10%;
         line-height: 20px;
+        max-width: 70%;
         h2 {
             line-height: 30px;
             margin-bottom: 0;
@@ -201,12 +202,15 @@ footer {
     }
 
     .btn:link, .btn:visited, .btn:active {
-        font-size: 10pt;
+        font-size: 12pt;
     }
 
     .news {
         a:link, a:active, a:visited {
-            height: 120px;
+            height: auto;
+            p {
+                font-size: 12pt;
+            }
         }
     }
 
