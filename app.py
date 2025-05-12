@@ -175,7 +175,3 @@ def photo(title):
                                image=info["image"], date=info["date"])
     else:
         return render_template('photo.html', notfound=True)
-
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)

@@ -194,21 +194,55 @@ h1 {
 }
 
 @media screen and (max-width: 990px) {
+    body {
+        font-size: 14pt;
+    }
+
     .btn:link, .btn:visited, .btn:active {
         font-size: 12pt;
     }
 
-    .text p {
-        display: none;
+    .text {
+        width: 100%;
+        height: auto;
+
+        p {
+           display: none;
+        }
+
+        h4 {
+            margin: 0;
+        }
     }
 
     .photo {
         width: 100%;
+        p {
+            margin: 7px 0;
+        }
     }
 
     .photos {
+        width: 90%;
+        margin-left: 5%;
         a:link, a:active, a:visited {
             flex-wrap: wrap;
         }
+    }
+
+    h1 {
+        margin-left: 5%;
+    }
+
+    .search, .choose {
+        width: 90%;
+        margin-left: 5%;
+        #ctg {
+            width: 200px;
+        }
+    }
+
+    .rdo_lb img {
+        width: 90%;
     }
 }

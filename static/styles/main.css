@@ -193,11 +193,18 @@ footer {
 }
 
 @media screen and (max-width: 990px) {
+    body {
+        font-size: 14pt;
+    }
+
     .btn:link, .btn:visited, .btn:active {
         font-size: 12pt;
     }
 
     .news {
+        width: 95%;
+        margin-left: 5%;
+
         a:link, a:active, a:visited {
             height: auto;
             p {
@@ -207,7 +214,12 @@ footer {
     }
 
     .bigphoto:link, .bigphoto:active, .bigphoto:visited {
-        height: 300px;
+        height: 250px;
+
+        .text {
+            margin-left: 5%;
+            max-width: 80%;
+        }
     }
 
     .pmainlink {
@@ -218,8 +230,26 @@ footer {
         display: none;
     }
 
+    .photos {
+        margin-left: 5%;
+        width: 85%;
+    }
+
     .photo {
         width: 100%;
         height: auto;
+
+        img {
+            margin-right: 0;
+
+        }
+    }
+
+    h1 {
+        margin-left: 5%;
+    }
+
+    footer {
+        padding: 25px 5%;
     }
 }

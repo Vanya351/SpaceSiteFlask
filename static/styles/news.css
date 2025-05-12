@@ -62,7 +62,7 @@ body {
 }
 
 .rdo_lb:has(.rdo:checked) img {
-        filter: grayscale(0);
+    filter: grayscale(0);
 }
 
 h1 {
@@ -195,11 +195,40 @@ h1 {
 }
 
 @media screen and (max-width: 990px) {
+    body {
+        font-size: 14pt;
+    }
+
     .btn:link, .btn:visited, .btn:active {
         font-size: 12pt;
     }
 
     .mobile_hide {
         display: none;
+    }
+
+    h1 {
+        margin-left: 5%;
+    }
+
+    .search, .choose {
+        width: 90%;
+        margin-left: 5%;
+        #ctg {
+            width: 180px;
+        }
+    }
+
+    .news {
+        margin-left: 8%;
+        width: 85%;
+    }
+
+    .date {
+        font-size: 12pt;
+    }
+
+    .rdo_lb img {
+        width: 90%;
     }
 }

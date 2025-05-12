@@ -70,6 +70,25 @@ h2 {
 
 @media screen and (max-width: 990px) {
     .btn:link, .btn:visited, .btn:active {
+        font-size: 11pt;
+    }
+
+    body {
+        font-size: 11pt;
+    }
+
+    #content {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .default {
         font-size: 12pt;
+        text-align: justify;
+    }
+
+    .undimg {
+        width: 100%;
+        font-size: 11pt;
     }
 }
